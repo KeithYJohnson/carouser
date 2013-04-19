@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418235507) do
+ActiveRecord::Schema.define(:version => 20130419160739) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(:version => 20130418235507) do
     t.integer  "host_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "where"
+    t.decimal  "longtitude"
+    t.decimal  "latitude"
   end
 
   create_table "reservations", :force => true do |t|
