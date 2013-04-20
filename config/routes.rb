@@ -1,4 +1,7 @@
 Carouser::Application.routes.draw do
+  resources :comments
+
+
   resources :events
 
 
