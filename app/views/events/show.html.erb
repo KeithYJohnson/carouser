@@ -46,6 +46,10 @@
   <%= link_to "Map", "http://maps.google.com/?q=#{@event.latitude},#{@event.longitude}" %>
 </p>
 
+<p>
+  <%= image_tag("http://maps.googleapis.com/maps/api/streetview?size=600x300&location=#{@event.latitude}, #{@event.longitude}&sensor=false") %>
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
