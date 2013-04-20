@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
   has_many :reservations
   belongs_to :host, :class_name => "User" ,:foreign_key => "host_id"
-  has_many :commnents
+  has_many :comments
 
   validates :address, :presence => :true	
 

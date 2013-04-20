@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  body: 
+  body: MyText
+  event_id: 1
 
 two:
   name: MyString
-  body: 
+  body: MyText
+  event_id: 1
