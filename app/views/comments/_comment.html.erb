@@ -1,0 +1,8 @@
+
+<% @event.comments.each do |comment| %> 
+
+	<div class="comment">
+		<b><%=h comment.name %> says:</b><br>
+		<%= simple_format h(comment.body) %>
+	</div>
+<% end %> 

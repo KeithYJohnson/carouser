@@ -51,5 +51,29 @@
 </p>
 
 
+<%= form_for @comment do |f| %>
+
+
+  <%= f.hidden_field :event_id %>
+
+  <p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Post Comment" %>
+  </p>
+<% end %>
+
+
+<%= render '/comments/comment', :collection => @event.comments %>
+
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
