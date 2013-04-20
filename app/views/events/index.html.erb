@@ -1,5 +1,7 @@
 <h1>Listing events</h1>
 
+
+
 <table>
   <tr>
     <th>Title</th>
@@ -10,6 +12,7 @@
     <th>End time</th>
     <th>Description</th>
     <th>Host</th>
+    <th>Distance To</th>
 
     <th></th>
     <th></th>
@@ -26,6 +29,7 @@
     <td><%= event.end_time %></td>
     <td><%= event.description %></td>
     <td><%= event.host_id %></td>
+    <td><%= event.distance_to(request.ip, :unit => :mi) %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
