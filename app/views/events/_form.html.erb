@@ -39,6 +39,14 @@
     <%= f.label :host_id %><br />
     <%= f.number_field :host_id %>
   </div>
+  <div class="field">
+    <%= f.label :where %><br />
+    <%= f.text_field :where %>
+  </div>
+
+  <%= f.hidden_field :longitude %> 
+  <%= f.hidden_field :latitude %> 
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.time :end_time
       t.text :description
       t.integer :host_id
-
+      t.string :where 
       t.timestamps
     end
   end

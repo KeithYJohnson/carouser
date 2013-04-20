@@ -3,12 +3,14 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Where</th>
     <th>Address</th>
     <th>Date</th>
     <th>Start time</th>
     <th>End time</th>
     <th>Description</th>
     <th>Host</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +19,7 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= event.title %></td>
+    <td><%= event.where %></td>
     <td><%= event.address %></td>
     <td><%= event.date %></td>
     <td><%= event.start_time %></td>

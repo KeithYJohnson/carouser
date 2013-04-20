@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
+  
 <p>
   <b>Title:</b>
   <%= @event.title %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @event.where %>
 </p>
 
 <p>
@@ -33,6 +40,10 @@
 <p>
   <b>Host:</b>
   <%= @event.host_id %>
+</p>
+
+<p>
+  <%= link_to "Map", "http://maps.google.com/?q=#{@event.latitude},#{@event.longitude}" %>
 </p>
 
 

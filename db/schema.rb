@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20130419160739) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "where"
-    t.decimal  "longtitude"
-    t.decimal  "latitude"
+    t.float    "longtitude"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "reservations", :force => true do |t|

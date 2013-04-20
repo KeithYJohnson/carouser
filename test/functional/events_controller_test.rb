@@ -3,6 +3,10 @@ require 'test_helper'
 class EventsControllerTest < ActionController::TestCase
   setup do
     @event = events(:one)
+    #@event = Events.make! <- Machinist object creations
+    #@event = @events.hosts.make
+    #@event_one = Events.make!
+    #@event_two = Events.make!
   end
 
   test "should get index" do

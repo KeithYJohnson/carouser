@@ -1,6 +1,6 @@
 class AddLongitudeAndLatitudeToEvent < ActiveRecord::Migration
   def change
-    add_column :events, :longtitude, :decimal
-    add_column :events, :latitude, :decimal
+    add_column :events, :longitude, :float
+    add_column :events, :latitude, :float
   end
 end
