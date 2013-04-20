@@ -70,6 +70,12 @@
   </p>
 <% end %>
 
+<% if @comment.errors  %>
+  <% @comment.errors.full_messages.each do |error| %>
+    <ul><%= error %></ul>
+  <% end %>
+<% end %>
+
 
 <%= render '/comments/comment', :collection => @event.comments %>
 

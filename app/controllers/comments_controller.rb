@@ -9,16 +9,17 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
 
+    @event = Event.find(params[:comment][:event_id])
     @comment = Comment.new(params[:comment])
-    binding.pry
+
     respond_to do |format|
       if @comment.save
-        binding.pry
+
         format.html { redirect_to @comment.event, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        binding.pry
-        format.html { render action: "new" }
+
+        format.html { render "events/show" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
