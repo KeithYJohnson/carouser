@@ -19,17 +19,17 @@
 
 <p>
   <b>Date:</b>
-  <%= @event.date %>
+  <%= @event.date.to_s(:date) %>
 </p>
 
 <p>
   <b>Start time:</b>
-  <%= @event.start_time %>
+  <%= @event.start_time.to_s(:time) %>
 </p>
 
 <p>
   <b>End time:</b>
-  <%= @event.end_time %>
+  <%= @event.end_time.to_s(:time) %>
 </p>
 
 <p>

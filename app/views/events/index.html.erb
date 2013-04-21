@@ -12,7 +12,7 @@
     <th>End time</th>
     <th>Description</th>
     <!-- <th>Host</th> -->
-    <th>Distance To</th>
+    <th>Distance To Event</th>
 
     <th></th>
     <th></th>
@@ -20,6 +20,7 @@
   </tr>
 
 <% @events.each do |event| %>
+    <% distance = event.distance_to(request.ip).to_i %>  
   <tr>
     <td><%= event.title %></td>
     <td><%= event.where %></td>
@@ -29,7 +30,7 @@
     <td><%= event.end_time.to_s(:time) %></td>
     <td><%= event.description %></td>
     <!-- <td><%= event.host_id %></td> -->
-    <td><%= event.distance_to(request.ip, {:unit => :mi}) %></td>
+    <td><%= number_with_precision(distance, :precision => 0) %> meters</td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
