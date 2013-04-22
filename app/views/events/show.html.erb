@@ -1,84 +1,78 @@
-<p id="notice"><%= notice %></p>
+<html>
+<head>
+  <%= stylesheet_link_tag "main" %>
+</head>
 
 
-  
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
+<body>
+  <p id="notice"><%= notice %></p>
+    
+  <h1>
+    <%= @event.title %> @ <%=@event.where %>
+  </h1>
 
-<p>
-  <b>Where:</b>
-  <%= @event.where %>
-</p>
+  <div id="left" >
+    <p>
+      <%= link_to @event.address, "http://maps.google.com/?q=#{@event.latitude},#{@event.longitude}", {:target => "_new"} %>
+    </p>
 
-<p>
-  <b>Address:</b>
-  <%= @event.address %>
-</p>
+    <p>
+      <%= @event.date.to_s(:date) %>
+    </p>
 
-<p>
-  <b>Date:</b>
-  <%= @event.date.to_s(:date) %>
-</p>
+    <p>
+      From <%= @event.start_time.to_s(:time) %> to  <%= @event.end_time.to_s(:time) %>
+    </p>
 
-<p>
-  <b>Start time:</b>
-  <%= @event.start_time.to_s(:time) %>
-</p>
+    <p>
+      About this event
+      <br>
+      <%= @event.description %>
+    </p> 
+  </div> 
 
-<p>
-  <b>End time:</b>
-  <%= @event.end_time.to_s(:time) %>
-</p>
+  <div id="right">
+    <%= render '/comments/comment', :collection => @event.comments %>
+  </div>
 
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
+<!--   <p>
+  <%= link_to "Map", "http://maps.google.com/?q=#{@event.latitude},#{@event.longitude}", {:target => "_new"} %>
+  </p> -->
 
-<p>
-  <b>Host:</b>
-  <%= @event.host_id %>
-</p>
-
-<p>
-  <%= link_to "Map", "http://maps.google.com/?q=#{@event.latitude},#{@event.longitude}" %>
-</p>
-
-<p>
-  <%= image_tag("http://maps.googleapis.com/maps/api/streetview?size=600x300&location=#{@event.latitude}, #{@event.longitude}&sensor=false") %>
-</p>
+  <p id="image">
+    <%= image_tag("http://maps.googleapis.com/maps/api/streetview?size=600x300&location=#{@event.latitude}, #{@event.longitude}&sensor=false") %>
+  </p id="image">
 
 
-<%= form_for @comment do |f| %>
+  <%= form_for @comment do |f| %>
 
-  <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :event_id %>
 
-  <p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-  </p>
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    </p>
 
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
- 
-  <p>
-    <%= f.submit "Post Comment" %>
-  </p>
-<% end %>
-
-<% if @comment.errors  %>
-  <% @comment.errors.full_messages.each do |error| %>
-    <ul><%= error %></ul>
+    <p>
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </p>
+   
+    <p>
+      <%= f.submit "Post Comment" %>
+    </p>
   <% end %>
-<% end %>
+
+  <% if @comment.errors  %>
+    <% @comment.errors.full_messages.each do |error| %>
+      <ul><%= error %></ul>
+    <% end %>
+  <% end %>
 
 
-<%= render '/comments/comment', :collection => @event.comments %>
 
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</body>
+</html> 

@@ -1,0 +1,82 @@
+
+#wrapper {
+	margin:0 auto;
+	padding-left: 15px;
+
+	width:900px;
+	border-left:1px solid #f0e9eb;
+	border-right:1px solid #f0e9eb;
+	border-radius: 20px;
+	font-family: courier;
+	/*background-color: #4c729b;*/
+	background-color: white;
+	text-decoration: none;
+	font-size: 15px;
+		
+}
+
+#footer {
+
+	border-top:1px solid #f0e9eb;
+	padding:10px 15px;
+	clear:both;
+	color: white;
+}
+
+#header {
+	margin: 0 15px 0 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 4px solid black;
+	color: white;
+
+}
+
+body {
+	font-family: courier
+	background: -moz-linear-gradient(top, #a7c7dc 0%, #85b2d3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7c7dc), color-stop(100%,#85b2d3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* IE10+ */
+background: linear-gradient(to bottom, #a7c7dc 0%,#85b2d3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+}
+
+#left {
+	float: left;
+
+}
+
+#right {
+	float: left;
+	margin: 0 0 10px 10px;
+	border-left: 2px solid black;
+	padding: 0 0 10px 10px;
+}
+
+#image {
+	clear: both;
+}
+
+img {
+	border: 4px solid #a43b55;
+	border-radius: 10px;	
+
+}
+
+a:visited, a:link {
+	color:#a43b55;
+	text-decoration:underline;
+}
+
+table{
+	background: url('newspaper.jpg');
+	background-size: cover;	
+	border-radius: 5px;
+}
+
+
+
+
+

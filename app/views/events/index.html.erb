@@ -1,43 +1,47 @@
-<h1>Listing events</h1>
+
+<head>
+
+  <link href="/stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
+  <image style= "opacity = .1">
+    
+</head>
 
 
+<body>
+<div id="wrapper">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Where</th>
-    <th>Address</th>
-    <th>Date</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Description</th>
-    <!-- <th>Host</th> -->
-    <th>Distance To Event</th>
+    <h2>Happy Hours and Events Near You</h2>
 
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table >
+      <tr>
+        <th>Title</th>
+        <th>Where</th>
+        <th>Date</th>
+        <th> When </th>
+        <th>Distance To Event</th>
 
-<% @events.each do |event| %>
-    <% distance = event.distance_to(request.ip).to_i %>  
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.where %></td>
-    <td><%= event.address %></td>
-    <td><%= event.date.strftime("%A, %B %e"    ) %></td>
-    <td><%= event.start_time.strftime("%l:%M %p") %></td>
-    <td><%= event.end_time.to_s(:time) %></td>
-    <td><%= event.description %></td>
-    <!-- <td><%= event.host_id %></td> -->
-    <td><%= number_with_precision(distance, :precision => 0) %> meters</td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @events.each do |event| %>
+        <% distance = event.distance_to(request.ip).to_i %>  
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.where %></td>
+        <td><%= event.date.strftime("%A, %B %e"    ) %></td>
+        <td>From<%=event.start_time.strftime("%l:%M %p")%> To <%=event.end_time.to_s(:time) %></td>
+        <td><%= number_with_precision(distance, :precision => 0) %> meters</td>
+
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+    <br> <br>
 
 
-
-<%= link_to 'New Event', new_event_path %>
+    <%= link_to 'Create a new Event!', new_event_path %>
+</div>
+</body>

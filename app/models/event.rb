@@ -13,5 +13,6 @@ class Event < ActiveRecord::Base
 
 
 
-  #event.distance_to.request.ip
+
+
 end
