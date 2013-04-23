@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :event, :title, :address, :date, :start_time, :end_time, :description, :where, :host_id, :ip_address
+  attr_accessible :event, :title, :address, :date, :start_time, :end_time, :description, :where, :host_id, :ip_address, :latitude, :longitude
 
   has_many :reservations
   belongs_to :host, :class_name => "User" ,:foreign_key => "host_id"
@@ -10,9 +10,6 @@ class Event < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode
-
-
-
 
 
 end

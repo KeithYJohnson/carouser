@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.date_select :date %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br />
@@ -44,7 +44,7 @@
   <%= f.hidden_field :longitude %> 
   <%= f.hidden_field :latitude %> 
 
-  <div class="actions">
+  <div class="actions" id="glow">
     <%= f.submit %>
   </div>
 <% end %>

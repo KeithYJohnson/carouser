@@ -116,7 +116,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   geocoder
-  jquery-rails
+  jquery-rails (~> 2.1)
   machinist (>= 2.0.0.beta2)
   pg
   pry

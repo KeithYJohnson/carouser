@@ -21,10 +21,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 gem 'machinist', '>= 2.0.0.beta2'
 gem 'geocoder'
 gem 'pry'
+gem 'jquery-rails', '~> 2.1'
 
 group :production do
 	gem 'pg'

@@ -1,18 +1,24 @@
 
 #wrapper {
 	margin:0 auto;
-	padding-left: 15px;
-	width:900px;
-	border-left:1px solid #f0e9eb;
-	border-right:1px solid #f0e9eb;
+
+	width:800px;
+	/*border-left:1px solid #f0e9eb;*/
+	/*border-right:1px solid #f0e9eb;*/
 	border-radius: 20px;
 	font-family: courier;
 	/*background-color: #4c729b;*/
 	background-color: white;
 	text-decoration: none;
 	font-size: 15px;
-
+	font-weight: bold;
+	border: 4px solid black;
 }
+
+#container{
+	margin: 0 10px 0 10px;
+}
+
 
 #footer {
 
@@ -73,8 +79,28 @@ table{
 	background: url('newspaper.jpg');
 	background-size: cover;	
 	border-radius: 5px;
+	border: 1px solid #a43b55;
 }
 
+#error_explanation {
+	border-top: 2px solid #a43b55;
+	border-bottom: 2px solid #a43b55;
+	margin-bottom: 5px;
+}
+
+.field{
+	margin: 5px;
+}
+
+input:hover, select:hover { 
+
+    border-color: #9ecaed;
+    box-shadow: 0 0 20px #9ecaed;
+}
+
+b.comment {
+	color: blue;
+}
 
 
 
