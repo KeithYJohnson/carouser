@@ -1,7 +1,7 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-  attr_accessible :age, :host, :interests, :name, :salt, :hashed_password, :password
+  attr_accessible :age, :host, :interests, :name, :salt, :hashed_password, :password, :password_confirmation
 
   has_many :reservations
   has_many :hosted_events, :class_name=> 'Event', :foreign_key => 'host_id'
@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
   validates :password, :confirmation => true #automatically checking passwords mathc, will need to add second form for this though
+  attr_accessor :password_confirmation
+  	# Making password a virtual attribute of the model, won't be persisted to database.
+  attr_reader :password 	
   validate :password_must_be_present
 
   def User.authenticate(name, password)
@@ -22,10 +25,9 @@ class User < ActiveRecord::Base
   end
 
   private
-
-
+  
 	  def password_must_be_present
-	  	errors.add(:password, "Missing Passoword") unless hashed_password.present?
+	  	errors.add(:password, "Missing Password") unless hashed_password.present?
 	  end
 
 	  
