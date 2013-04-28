@@ -5,6 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :age
       t.text :interests
       t.boolean :host
+      t.string :hashed_password
+      t.string :salt
 
       t.timestamps
     end
